@@ -1650,7 +1650,37 @@ body {
 
 .Footer{
     width: 100%;
-    padding: 120px 120px;
+    padding: 140px 5%;
+    position: relative;
+    &:before{
+
+      background-color: rgba($Primary, $alpha: 0.15);
+      background-size: 30px;
+      background-repeat: repeat;
+      width: 5%;
+      height: 100%;
+      content: '';
+      top: 0;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+      
+    }
+
+      &:after{
+
+        background: url(../images/pattern-bg.png);
+        background-size: 30px;
+        background-repeat: repeat;
+        width: 160px;
+        height: 160px;
+        content: '';
+        top: -10px;
+        position: absolute;
+        right: 1%;
+      
+    }
+
     .FooterInner{
         width: 100%;
         display: flex;

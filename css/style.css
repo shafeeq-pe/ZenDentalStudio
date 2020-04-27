@@ -2048,7 +2048,33 @@ body {
 
 .Footer {
   width: 100%;
-  padding: 120px 120px;
+  padding: 140px 5%;
+  position: relative;
+}
+
+.Footer:before {
+  background-color: rgba(223, 181, 84, 0.15);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 5%;
+  height: 100%;
+  content: '';
+  top: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.Footer:after {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 160px;
+  height: 160px;
+  content: '';
+  top: -10px;
+  position: absolute;
+  right: 1%;
 }
 
 .Footer .FooterInner {
