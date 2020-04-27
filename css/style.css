@@ -1,0 +1,2292 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,500,600,700,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: none !important;
+}
+
+::-moz-selection {
+  background: #ffa600;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #ffa600;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  cursor: none;
+}
+
+body {
+  width: 100%;
+  line-height: 24px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#page {
+  opacity: 0;
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+#preloader {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+}
+
+#preloader:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  height: 100%;
+  width: 100%;
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+  border: 1px solid #dfb554;
+  border-top: 1px solid transparent;
+  border-radius: 100%;
+}
+
+#preloader .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 25px;
+  width: 10.6px;
+  margin-top: -12.5px;
+  margin-left: -5.3px;
+  -webkit-animation: wink 1s ease-in-out infinite alternate;
+  animation: wink 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes wink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cursor-inner {
+  z-index: 9999;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
+.cursor-inner--dot {
+  width: 8px;
+  height: 8px;
+  border-bottom: 1px solid #8d632c;
+}
+
+.cursor-inner--circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #8d632c;
+}
+
+@media screen and (max-width: 53em) {
+  .cursor {
+    visibility: hidden;
+  }
+}
+
+.SquareButton {
+  width: auto;
+  padding: 10px 20px;
+  min-width: 150px;
+  text-align: center;
+  font-weight: 300;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  background: #DFB554;
+  color: #FFFFFF;
+  border: 1px solid #DFB554;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.SquareButton:hover {
+  background: #FFFFFF;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #404040;
+}
+
+.PageSlide {
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(344deg, #dfb554 61%, #e7cf98 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.Banner:before {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 5%;
+  height: 30%;
+  content: '';
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.Banner:after {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 270px;
+  height: 270px;
+  right: 5%;
+  content: '';
+  bottom: -110px;
+  position: absolute;
+  z-index: 1;
+}
+
+.Banner .BannerImage {
+  width: 40%;
+  display: block;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  z-index: 2;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.Banner .BannerImage:before {
+  width: 100%;
+  height: 100%;
+  content: '';
+  left: 0;
+  top: 0;
+  background: #090909;
+  display: block;
+  position: absolute;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.Banner .BannerImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: absolute;
+}
+
+@-webkit-keyframes SliderOne {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  5% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  33% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+@keyframes SliderOne {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  5% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  33% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+@-webkit-keyframes SliderTwo {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  28% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  68% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+@keyframes SliderTwo {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  28% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+  }
+  64% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  68% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+@-webkit-keyframes SliderThree {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  64% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  68% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+@keyframes SliderThree {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  64% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  68% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12);
+  }
+}
+
+.Banner .SliderActive img:first-of-type {
+  -webkit-animation: 36s SliderOne infinite;
+          animation: 36s SliderOne infinite;
+  z-index: 1;
+}
+
+.Banner .SliderActive img:nth-child(2) {
+  -webkit-animation: 36s SliderTwo infinite;
+          animation: 36s SliderTwo infinite;
+  z-index: 3;
+}
+
+.Banner .SliderActive img:nth-child(3) {
+  -webkit-animation: 36s SliderThree infinite;
+          animation: 36s SliderThree infinite;
+  z-index: 5;
+}
+
+.Banner .BannerText {
+  position: absolute;
+  bottom: 10%;
+  padding-left: 140px;
+  z-index: 5;
+  left: 5%;
+  width: 90%;
+}
+
+.Banner .BannerText h1 {
+  color: #FFFFFF;
+  font-size: 96px;
+  line-height: 96px;
+  padding-bottom: 30px;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+}
+
+.Banner .BannerText h1:hover {
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.Banner .BannerText p {
+  color: #FFFFFF;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.Banner .BannerText .ButtonFlex {
+  margin-top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  max-width: 270px;
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton .ButtonIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #404040;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton .ButtonIcon i {
+  margin: auto auto;
+  width: 20px;
+  font-size: 20px;
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton .ButtonText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #404040;
+  margin: auto 0;
+  padding-left: 10px;
+  font-size: 18px;
+  max-width: 270px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton:hover .ButtonIcon {
+  -webkit-transform: scale(0.8, 0.8);
+          transform: scale(0.8, 0.8);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Banner .BannerText .ButtonFlex .BannerButton:hover .ButtonText {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  background: #FFFFFF;
+  border-radius: 60px;
+  width: 190px;
+  padding: 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton .ButtonIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #FFFFFF;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #404040;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton .ButtonIcon i {
+  margin: auto auto;
+  width: 20px;
+  font-size: 20px;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton .ButtonText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #404040;
+  margin: auto 0;
+  padding-left: 0;
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton:hover {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton:hover .ButtonIcon {
+  border: 1px solid #DFB554;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton:hover .ButtonIcon i {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #DFB554;
+}
+
+.Banner .BannerText .ButtonFlex .ContactButton:hover .ButtonText {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding-left: 8px;
+}
+
+@-webkit-keyframes LineVerticalDraw {
+  0% {
+    height: 0px;
+  }
+  50% {
+    height: 150px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes LineVerticalDraw {
+  0% {
+    height: 0px;
+  }
+  50% {
+    height: 150px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+.Banner .LeftDirection {
+  position: absolute;
+  left: 5%;
+  z-index: 99;
+  bottom: 10%;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Banner .LeftDirection:before {
+  width: 1px;
+  background: #FFFFFF;
+  content: '';
+  display: block;
+  position: relative;
+  top: 0;
+  left: 10px;
+  -webkit-animation: LineVerticalDraw 4s infinite;
+          animation: LineVerticalDraw 4s infinite;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Banner .LeftDirection h6 {
+  color: white;
+  height: 22px;
+  width: auto;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding-right: 19px;
+  position: relative;
+  margin: auto 0;
+  padding-left: 15px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: top left 0;
+          transform-origin: top left 0;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.Banner .LeftDirection a {
+  color: white;
+  font-size: 16px;
+  display: block;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  text-align: center;
+  margin-right: 15px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: -16px;
+  left: -0.52rem;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.Banner .LeftDirection a i {
+  margin: auto auto;
+}
+
+.Banner .LeftDirection a:hover {
+  color: #090909;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: #FFFFFF;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.Banner .LeftDirection:hover {
+  -webkit-animation: LineVerticalDraw 1s forwards;
+          animation: LineVerticalDraw 1s forwards;
+}
+
+.Banner .LeftDirection:hover h6 {
+  padding-left: 35px;
+}
+
+.Banner .Social {
+  position: absolute;
+  z-index: 99;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse wrap;
+          flex-flow: row-reverse wrap;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: bottom right 0;
+          transform-origin: bottom right 0;
+  top: 60px;
+  right: 5%;
+}
+
+.Banner .Social h6 {
+  color: white;
+  height: 22px;
+  width: auto;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding-right: 19px;
+  position: relative;
+  margin: auto 0;
+  padding-left: 15px;
+}
+
+.Banner .Social h6:before {
+  width: 2px;
+  height: 16px;
+  background: #FFFFFF;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.Banner .Social nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  margin-left: 15px;
+}
+
+.Banner .Social nav a {
+  color: white;
+  font-size: 16px;
+  display: block;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  text-align: center;
+  margin-right: 15px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Banner .Social nav a i {
+  margin: auto 0;
+}
+
+.Banner .Social nav a span {
+  padding-left: 10px;
+  font-weight: 300;
+  margin: auto 0;
+}
+
+.Banner .Social nav a:hover {
+  color: #090909;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 20px 5%;
+  width: 100%;
+}
+
+.Header .Logo {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Header .Logo img {
+  margin: auto 0;
+}
+
+.Header .Social {
+  opacity: 0;
+  visibility: hidden;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute;
+  z-index: 99;
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: auto 0;
+  right: 5%;
+}
+
+.Header .Social h6 {
+  color: white;
+  height: 22px;
+  width: auto;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  padding-right: 19px;
+  position: relative;
+  margin: auto 0;
+  padding-left: 15px;
+}
+
+.Header .Social h6:before {
+  width: 2px;
+  height: 16px;
+  background: #FFFFFF;
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.Header .Social nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  margin-left: 15px;
+}
+
+.Header .Social nav a {
+  color: white;
+  font-size: 16px;
+  display: block;
+  height: auto;
+  width: auto;
+  padding: 2px;
+  text-align: center;
+  margin-right: 15px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Header .Social nav a i {
+  margin: auto 0;
+}
+
+.Header .Social nav a span {
+  padding-left: 10px;
+  font-weight: 300;
+  margin: auto 0;
+}
+
+.Header .Social nav a:hover {
+  color: #090909;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Header .Social nav a {
+  font-size: 24px;
+}
+
+.Header .MenuIcon {
+  display: block;
+  float: right;
+  width: 42px;
+  height: 30px;
+  margin: 17px 0;
+  margin-right: 100px;
+}
+
+.Header .MenuIcon .Hamburger {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 999;
+}
+
+.Header .MenuIcon .Hamburger .HamburgerInner {
+  display: block;
+  width: 42px;
+  height: 4px;
+  background: #FFFFFF;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.Header .MenuIcon .Hamburger .HamburgerInner:before, .Header .MenuIcon .Hamburger .HamburgerInner:after {
+  display: block;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  height: 4px;
+  background: #FFFFFF;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.Header .MenuIcon .Hamburger .HamburgerInner:before {
+  width: 20px;
+  top: 12px;
+}
+
+.Header .MenuIcon .Hamburger .HamburgerInner:after {
+  width: 32px;
+  top: 24px;
+}
+
+.Header .Menu {
+  width: 300px;
+  margin: auto auto;
+  height: calc(100vh - 170px);
+  position: fixed;
+  background: #FFFFFF;
+  left: 0;
+  -webkit-transform: translateX(-305px);
+          transform: translateX(-305px);
+  bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  padding: 10px 40px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-top-right-radius: 1200px;
+  border-bottom-right-radius: 1200px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.Header .Menu:before {
+  background: url(../images/pattern-bg.png);
+  background-size: 20px;
+  background-repeat: repeat;
+  width: 100px;
+  height: 100px;
+  content: '';
+  bottom: 0%;
+  position: absolute;
+  left: 0;
+}
+
+.Header .Menu:after {
+  background: #090909;
+  background-size: 20px;
+  background-repeat: repeat;
+  width: 100%;
+  height: 100%;
+  /* content: ''; */
+  bottom: 0%;
+  position: fixed;
+  left: 0;
+}
+
+.Header .Menu ul {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: auto;
+}
+
+.Header .Menu ul li {
+  width: 100%;
+  margin: 0 15px 10px;
+  position: relative;
+}
+
+.Header .Menu ul li a {
+  color: #9c9c9c;
+  position: relative;
+  padding-bottom: 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.Header .Menu ul li a.Active, .Header .Menu ul li a:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #090909;
+}
+
+.Header .Menu ul li a:after {
+  width: 2px;
+  height: 0px;
+  position: absolute;
+  top: 0px;
+  content: '';
+  background: #DFB554;
+  opacity: 0;
+  left: -15px;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.Header .Menu ul li a:hover:after {
+  height: 20px;
+  opacity: 1;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+
+.Header .Menu ul li .SpecialMenuItem {
+  border: 1px solid #DFB554;
+  color: #DFB554;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
+
+.Header .Menu ul li .SpecialMenuItem:after {
+  top: 7px;
+}
+
+.Header .Menu ul li .SubMenu {
+  position: absolute;
+  width: 130px;
+  position: absolute;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  top: 0;
+  right: -50px;
+  background: #fdfaf3;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  padding: 10px 0 0;
+  z-index: 99;
+}
+
+.Header .Menu ul li .SubMenu ul li {
+  width: 100%;
+  margin: 0 15px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Header .Menu ul li .SubMenu ul li a {
+  color: #404040;
+  position: relative;
+  padding-bottom: 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: block;
+  font-size: 16px;
+  opacity: 0.6;
+  width: 100%;
+  display: block;
+}
+
+.Header .Menu ul li .SubMenu ul li a:hover {
+  opacity: 1;
+}
+
+.Header .Menu ul .SubmenuBtn:hover .SubMenu {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.Header .HamburgerOpen .Hamburger .HamburgerInner {
+  background: none;
+}
+
+.Header .HamburgerOpen .Hamburger .HamburgerInner:before, .Header .HamburgerOpen .Hamburger .HamburgerInner:after {
+  top: 8px;
+}
+
+.Header .HamburgerOpen .Hamburger .HamburgerInner:before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 24px;
+}
+
+.Header .HamburgerOpen .Hamburger .HamburgerInner:after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 24px;
+}
+
+.Header .MenuOpen {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.Header .MenuOverlay {
+  width: 10%;
+  -webkit-transform: translateX(-250px) scale3d(0, 0, 0);
+          transform: translateX(-250px) scale3d(0, 0, 0);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  background: #090909;
+  background-size: 20px;
+  background-repeat: repeat;
+  height: 100%;
+  -webkit-transition: all  1s;
+  transition: all  1s;
+  position: fixed;
+  z-index: 990;
+  top: 0;
+  left: 0;
+  border-radius: 2000px;
+  opacity: 0;
+}
+
+.Header .MenuOverlayActive {
+  width: 100%;
+  -webkit-transform: translateX(50px) scale3d(2, 2, 2);
+          transform: translateX(50px) scale3d(2, 2, 2);
+  -webkit-transition: all  1s;
+  transition: all  1s;
+  opacity: 0.8;
+}
+
+.FixedHeader {
+  background: #e7cf98;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: fixed;
+}
+
+.FixedHeader .Social {
+  opacity: 1;
+  visibility: visible;
+}
+
+.FixedHeader .MenuOverlayActive {
+  background: #d7a229;
+  opacity: 0.95;
+}
+
+.AboutSection {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: calc(7% + 140px);
+  position: relative;
+}
+
+.AboutSection:before {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 205px;
+  height: 205px;
+  content: '';
+  top: -90px;
+  position: absolute;
+  left: 2%;
+}
+
+.AboutSection .CaptionLeft {
+  width: 60%;
+  background-color: rgba(223, 181, 84, 0.15);
+  margin-left: 5%;
+  padding: 15% 5% 5% 140px;
+}
+
+.AboutSection .CaptionLeft h5 {
+  font-size: 20px;
+  color: #898989;
+  font-weight: 600;
+  position: relative;
+  z-index: 9;
+}
+
+.AboutSection .CaptionLeft h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: inline-block;
+  width: auto;
+}
+
+.AboutSection .CaptionLeft h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.AboutSection .ImageRight {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 120px;
+  overflow: hidden;
+}
+
+.AboutSection .ImageRight img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -webkit-transition: all 4s;
+  transition: all 4s;
+  -webkit-transform: scale(1) translateY(0px);
+          transform: scale(1) translateY(0px);
+}
+
+.AboutSection .ImageRight:hover img {
+  -webkit-transition: all 4s;
+  transition: all 4s;
+  -webkit-transform: scale(1.05) translateY(20px);
+          transform: scale(1.05) translateY(20px);
+}
+
+.AboutSection:after {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 240px;
+  height: 300px;
+  content: '';
+  bottom: -220px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: -1;
+}
+
+.AtZen {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.AtZen .Image {
+  width: 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.AtZen .Image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.AtZen .Content {
+  width: 50%;
+  height: 100%;
+  padding: 10%;
+  padding-left: 140px;
+}
+
+.AtZen .Content h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: inline-block;
+  width: auto;
+}
+
+.AtZen .Content h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.AtZen .Content p {
+  font-size: 24px;
+  line-height: 34px;
+  color: #898989;
+  font-weight: 300;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  display: inline-block;
+  width: auto;
+  padding: 10% 0;
+}
+
+.AtZen .Content .Button {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  max-width: 270px;
+}
+
+.AtZen .Content .Button .ButtonIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #DFB554;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #FFFFFF;
+  border: 1px solid #DFB554;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.AtZen .Content .Button .ButtonIcon i {
+  margin: auto auto;
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.AtZen .Content .Button .ButtonText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #404040;
+  margin: auto 0;
+  padding-left: 10px;
+  font-size: 18px;
+  max-width: 100px;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.AtZen .Content .Button:hover .ButtonText {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.AtZen .Content .Button:hover .ButtonIcon {
+  background: #FFFFFF;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #404040;
+}
+
+.OurValues {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse wrap;
+          flex-flow: row-reverse wrap;
+  padding-top: 140px;
+}
+
+.OurValues:after {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 270px;
+  height: 240px;
+  content: '';
+  bottom: -145px;
+  position: absolute;
+  left: calc(50% + 10px);
+  z-index: -1;
+}
+
+.OurValues .Image {
+  width: calc(50% - 140px);
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 700px;
+}
+
+.OurValues .Image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.OurValues .Content {
+  width: calc(50% + 140px);
+  height: 100%;
+  padding: 10% 8% 0 0;
+  padding-left: calc(5% + 140px);
+}
+
+.OurValues .Content h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: inline-block;
+  width: auto;
+}
+
+.OurValues .Content h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.OurValues .Content .accordion-container {
+  position: relative;
+  width: 100%;
+  outline: 0;
+  cursor: pointer;
+  margin-top: 8%;
+}
+
+.OurValues .Content .accordion-container .article-title {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 15px 0px 10px 50px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #404040;
+  cursor: pointer;
+}
+
+.OurValues .Content .accordion-container .article-title:hover i:active,
+.OurValues .Content .accordion-container .content-entry.open i {
+  color: #FFFFFF;
+  background: #DFB554;
+}
+
+.OurValues .Content .accordion-container .content-entry i {
+  position: absolute;
+  top: 13px;
+  left: 0;
+  font-style: normal;
+  font-size: 24px;
+  color: #090909;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 30px;
+  padding: 5px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border: 1px solid #DFB554;
+  font-weight: lighter;
+}
+
+.OurValues .Content .accordion-container .content-entry i:before {
+  content: "+";
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.OurValues .Content .accordion-container .content-entry.open i:before {
+  content: "-";
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.OurValues .Content .accordion-content {
+  display: none;
+}
+
+.OurValues .Content p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #6f6f6f;
+  font-weight: 300;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  display: inline-block;
+  width: auto;
+  padding: 5px 0 10px 50px;
+}
+
+.ServicesAndPatients {
+  width: 100%;
+  padding: 5%;
+  padding-top: 200px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.ServicesAndPatients:before {
+  background-color: rgba(223, 181, 84, 0.15);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: calc(45% - 140px);
+  height: 200px;
+  content: '';
+  top: 0;
+  position: absolute;
+  left: calc(50% + 140px);
+  z-index: -1;
+}
+
+.ServicesAndPatients .Content {
+  width: 100%;
+}
+
+.ServicesAndPatients .Content h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: inline-block;
+  width: auto;
+}
+
+.ServicesAndPatients .Content h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.ServicesAndPatients .Content h3 {
+  font-size: 20px;
+  line-height: 20px;
+  color: #404040;
+  font-weight: 400;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: inline-block;
+  width: auto;
+}
+
+.ServicesAndPatients .Content p {
+  font-size: 18px;
+  line-height: 28px;
+  color: #6f6f6f;
+  font-weight: 300;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  display: inline-block;
+  width: auto;
+  padding: 8% 0 2%;
+}
+
+.ServicesAndPatients .Services {
+  width: calc(50% + 140px);
+  padding: 0% 8% 0 0;
+  padding-left: 140px;
+}
+
+.ServicesAndPatients .Services .Listing {
+  width: 100%;
+  margin-top: 2%;
+}
+
+.ServicesAndPatients .Services .Listing ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.ServicesAndPatients .Services .Listing ul li {
+  width: 50%;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding-left: 35px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #404040;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.ServicesAndPatients .Services .Listing ul li::before {
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  border-radius: 15px;
+  display: block;
+  border-radius: 1px solid;
+  position: absolute;
+  content: '';
+  border: 1px solid #6f6f6f;
+}
+
+.ServicesAndPatients .Patients {
+  width: calc(50% - 140px);
+  padding-top: 140px;
+}
+
+.ServicesAndPatients .Patients .SquareButton {
+  margin-top: 40px;
+}
+
+.ClientsQuotes {
+  width: 100%;
+  position: relative;
+  margin-top: 5%;
+  padding: 10% 0;
+}
+
+.ClientsQuotes h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: block;
+  width: auto;
+  text-align: center !important;
+  padding-bottom: 10px;
+}
+
+.ClientsQuotes h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.ClientsQuotes h3 {
+  font-size: 20px;
+  line-height: 20px;
+  color: rgba(9, 9, 9, 0.35);
+  font-weight: 700;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  display: block;
+  width: auto;
+  text-align: center !important;
+  padding-top: 20px;
+}
+
+.ClientsQuotes:before {
+  background-color: rgba(223, 181, 84, 0.15);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 95%;
+  height: 100%;
+  content: '';
+  top: 0;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.ClientsQuotes:after {
+  background: url(../images/pattern-bg.png);
+  background-size: 30px;
+  background-repeat: repeat;
+  width: 10%;
+  height: 240px;
+  content: '';
+  top: -125px;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+}
+
+.ClientsQuotes .ClientsCarouselMain {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 5%;
+}
+
+.ClientsQuotes .ClientsCarouselMain:before {
+  background: url(../images/quote.png);
+  background-size: 40px;
+  background-repeat: n;
+  width: 40px;
+  height: 33px;
+  content: '';
+  top: 0;
+  position: absolute;
+  left: calc(50% - 25px);
+  z-index: -1;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar {
+  padding-top: 80px;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav {
+  margin-top: 10px;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav button {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  padding: 15px !important;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 50px !important;
+  border: 1px solid #9c9c9c;
+  color: #DFB554;
+  outline: 0 !important;
+  position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav button:hover {
+  border: 1px solid #FFFFFF;
+  background: #FFFFFF;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav button span {
+  font-size: 20px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav .owl-next {
+  right: 0;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates {
+  width: 100%;
+  position: relative;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #8d8d8d;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates h4 {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #404040;
+}
+
+.ContactUsSection {
+  width: 100%;
+  position: relative;
+}
+
+.ContactUsSection:before {
+  background: linear-gradient(94deg, white 38%, rgba(255, 255, 255, 0) 100%);
+  width: 50%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.ContactUsSection .Map {
+  width: 90%;
+  margin-left: 10%;
+  position: relative;
+}
+
+.ContactUsSection .Map .Location {
+  position: absolute;
+  bottom: 30%;
+  right: 14%;
+  font-size: 30px;
+  color: #DFB554;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.ContactUsSection .Map .Location:hover {
+  -webkit-transform: scale(1.3) translateY(-10px);
+          transform: scale(1.3) translateY(-10px);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.ContactUsSection .Contact {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: calc(5% + 140px);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 99;
+}
+
+.ContactUsSection .Contact h2 {
+  font-size: 60px;
+  line-height: 60px;
+  color: #404040;
+  font-weight: 700;
+  padding-top: 20px;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(0px);
+          transform: translatex(0px);
+  display: block;
+  width: auto;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.ContactUsSection .Contact h2:hover {
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-transform: translatex(20px);
+          transform: translatex(20px);
+}
+
+.ContactUsSection .Contact h3 {
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(9, 9, 9, 0.55);
+  font-weight: 700;
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  display: block;
+  width: auto;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.ContactUsSection .Contact .SquareButton {
+  margin-top: 40px;
+}
+
+.Footer {
+  width: 100%;
+  padding: 120px 120px;
+}
+
+.Footer .FooterInner {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Footer .FooterInner .LogoAndAddress {
+  width: 30%;
+  max-width: 250px;
+  margin: 0 0;
+}
+
+.Footer .FooterInner .LogoAndAddress p {
+  width: 100%;
+  color: rgba(64, 64, 64, 0.7);
+  text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  font-size: 16px;
+  padding-top: 40px;
+}
+
+.Footer .FooterInner .LogoAndAddress .Button {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+  margin-top: 15px;
+  max-width: 170px;
+}
+
+.Footer .FooterInner .LogoAndAddress .Button .ButtonIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #DFB554;
+  border: 1px solid #9c9c9c;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.Footer .FooterInner .LogoAndAddress .Button .ButtonIcon i {
+  margin: auto auto;
+  width: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.Footer .FooterInner .LogoAndAddress .Button .ButtonText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #DFB554;
+  margin: auto 0;
+  padding-right: 10px;
+  font-size: 18px;
+  max-width: 130px;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.Footer .FooterInner .LogoAndAddress .Button:hover .ButtonText {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.Footer .FooterInner .LogoAndAddress .Button:hover .ButtonIcon {
+  background: #DFB554;
+  border: 1px solid #DFB554;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: #FFFFFF;
+}
+
+.Footer .LinksWrap {
+  width: 70%;
+  padding-left: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.Footer .LinksWrap .Links {
+  width: 30%;
+}
+
+.Footer .LinksWrap .Links h4 {
+  font-size: 30px;
+  line-height: 30px;
+  padding-bottom: 35px;
+  text-transform: uppercase;
+}
+
+.Footer .LinksWrap .Links ul {
+  width: 100%;
+}
+
+.Footer .LinksWrap .Links ul .BookButton {
+  width: auto;
+  padding: 7px 20px;
+  min-width: 150px;
+  text-align: center;
+  font-weight: 300;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: 1px solid #DFB554;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: transparent;
+  color: #404040;
+  margin-top: 10px;
+  border-radius: 30px;
+}
+
+.Footer .LinksWrap .Links ul .BookButton:hover {
+  color: #FFFFFF;
+  background: #DFB554;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Footer .LinksWrap .Links ul li {
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.Footer .LinksWrap .Links ul li a {
+  width: 100%;
+  color: rgba(64, 64, 64, 0.7);
+  text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Footer .LinksWrap .Links ul li a:hover {
+  color: #090909;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.Footer .LinksWrap .Links ul li a i {
+  padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+  #preloader {
+    height: 60px;
+    width: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  #preloader .icon {
+    height: 37.5px;
+    width: 15.9px;
+    margin-top: -18.75px;
+    margin-left: -7.95px;
+  }
+  #preloader:before {
+    left: -2px;
+    top: -2px;
+    border-top-width: 2px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #preloader {
+    height: 80px;
+    width: 80px;
+    margin-top: -40px;
+    margin-left: -40px;
+  }
+  #preloader .icon {
+    height: 50px;
+    width: 21.2px;
+    margin-top: -25px;
+    margin-left: -10.6px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Footer {
+    width: 100%;
+    padding: 50px 20px;
+  }
+  .Footer .FooterInner {
+    width: 100%;
+  }
+  .Footer .FooterInner .LogoAndAddress {
+    width: 200px;
+    margin: 0 auto;
+  }
+  .Footer .FooterInner .LinksWrap {
+    width: 100%;
+  }
+  .Footer .FooterInner .LinksWrap .Links {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .Footer .FooterInner .LinksWrap .Links ul li {
+    margin-bottom: 7px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
