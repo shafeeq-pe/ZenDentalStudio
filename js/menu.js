@@ -49,13 +49,13 @@ $('#menu-btn').click(function(event, handler) {
 
 if (document.documentElement.clientWidth < 980) 
 {
-$('.submenu-btn').click(function(event, handler) {
+$('.SubmenuBtn').click(function(event, handler) {
 
 	event.stopPropagation();
-	var thismenu = $(this).find('.submenu');
-		$('.submenu-btn').find('.submenu').not(thismenu).removeClass('subMenuOpen');
+	var thismenu = $(this).find('.SubMenu');
+		$('.SubmenuBtn').find('.SubMenu').not(thismenu).removeClass('SubMenuOpen');
 	
-	$(this).find('.submenu').toggleClass('subMenuOpen');
+	$(this).find('.SubMenu').toggleClass('SubMenuOpen');
 	});
 }
 	

@@ -1127,6 +1127,13 @@ body {
   transition: all .8s;
 }
 
+.Header .Menu ul li .SubmenuDropDown {
+  position: absolute;
+  right: 0;
+  padding: 5px;
+  color: #404040;
+}
+
 .Header .Menu ul li .SpecialMenuItem {
   border: 1px solid #DFB554;
   color: #DFB554;
@@ -1140,16 +1147,17 @@ body {
 
 .Header .Menu ul li .SubMenu {
   position: absolute;
-  width: 130px;
+  width: 230px;
   position: absolute;
-  -webkit-transform: translateX(200px);
-          transform: translateX(200px);
-  top: 0;
-  right: -50px;
+  -webkit-transform: translateX(400px);
+          transform: translateX(400px);
+  top: 30px;
+  left: 0px;
   background: #fdfaf3;
   -webkit-transition: all .3s;
   transition: all .3s;
   padding: 10px 0 0;
+  opacity: 0;
   z-index: 99;
 }
 
@@ -1176,13 +1184,6 @@ body {
 
 .Header .Menu ul li .SubMenu ul li a:hover {
   opacity: 1;
-}
-
-.Header .Menu ul .SubmenuBtn:hover .SubMenu {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 
 .Header .HamburgerOpen .Hamburger .HamburgerInner {
@@ -1925,12 +1926,12 @@ body {
   right: 0;
 }
 
-.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates {
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quotes {
   width: 100%;
   position: relative;
 }
 
-.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates p {
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quotes p {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
@@ -1940,7 +1941,7 @@ body {
   line-height: 26px;
 }
 
-.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quates h4 {
+.ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quotes h4 {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
@@ -2291,7 +2292,476 @@ body {
   }
 }
 
+@media screen and (max-width: 1600px) {
+  .Banner .BannerText h1 {
+    font-size: 72px;
+    line-height: 72px;
+  }
+  .AboutSection .CaptionLeft h2 {
+    font-size: 48px;
+    line-height: 54px;
+    max-width: 400px;
+  }
+  .AtZen .Content {
+    padding: 8% 5%;
+    padding-left: 100px;
+  }
+  .AtZen .Content h2 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .AtZen .Content p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .OurValues .Content {
+    padding: 8% 5%;
+    padding-left: calc(5% + 140px);
+  }
+  .OurValues .Content h2 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .OurValues .Content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .ServicesAndPatients .Content h2 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+  .ServicesAndPatients .Content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .ClientsQuotes h2 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .ContactUsSection .Contact {
+    width: 35%;
+  }
+  .ContactUsSection .Contact h2 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .ContactUsSection .Contact h3 {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (min-width: 901px) {
+  .SubmenuBtn:hover .SubMenu {
+    -webkit-transform: translateX(0px) !important;
+            transform: translateX(0px) !important;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    opacity: 1 !important;
+  }
+  .SliderActive img {
+    position: relative;
+  }
+  .SliderActive img:first-of-type {
+    -webkit-animation: 36s SliderOne infinite;
+            animation: 36s SliderOne infinite;
+    z-index: 1;
+  }
+  .SliderActive img:nth-child(2) {
+    -webkit-animation: 36s SliderTwo infinite;
+            animation: 36s SliderTwo infinite;
+    z-index: 3;
+  }
+  .SliderActive img:nth-child(3) {
+    -webkit-animation: 36s SliderThree infinite;
+            animation: 36s SliderThree infinite;
+    z-index: 5;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .OurValues .Content {
+    padding-left: calc(5% + 40px);
+  }
+  .OurValues .Image {
+    height: 725px;
+  }
+  .ServicesAndPatients .Services {
+    width: 100%;
+    padding-left: 40px;
+  }
+  .ServicesAndPatients .Patients {
+    width: 100%;
+    padding-left: 40px;
+  }
+  .Footer {
+    width: 100%;
+    padding: 120px 45px;
+  }
+  .Footer .FooterInner .LogoAndAddress {
+    width: 100%;
+    margin: 0 auto;
+    max-width: none;
+  }
+  .Footer .FooterInner .LogoAndAddress p {
+    width: 100%;
+    text-align: center;
+  }
+  .Footer .FooterInner .LogoAndAddress .Button {
+    margin: 15px auto;
+  }
+  .Footer .FooterInner .LogoAndAddress img {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+  .Footer .FooterInner .LinksWrap {
+    width: 100% !important;
+    margin: 71px auto 0;
+  }
+  .Footer .FooterInner .LinksWrap .Links {
+    width: 33.33%;
+  }
+  .Footer .FooterInner .LinksWrap .Links h4 {
+    font-size: 20px;
+    line-height: 30px;
+    padding-bottom: 35px;
+    text-transform: uppercase;
+  }
+  .Footer .FooterInner .LinksWrap .Links .BookButton {
+    font-size: 12px !important;
+  }
+}
+
 @media screen and (max-width: 900px) {
+  .Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    padding: 5px 5%;
+  }
+  .Header .Social {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible;
+  }
+  .Header .Social nav a {
+    color: #DFB554;
+  }
+  .Header .Logo {
+    width: 100px;
+    margin: 0 auto;
+    margin-left: 50px;
+  }
+  .Header .MenuIcon {
+    position: relative;
+    z-index: 999999;
+    margin-right: 32px;
+  }
+  .Header .MenuIcon .Hamburger .HamburgerInner {
+    background: #DFB554;
+  }
+  .Header .MenuIcon .Hamburger .HamburgerInner:before, .Header .MenuIcon .Hamburger .HamburgerInner:after {
+    background: #DFB554;
+  }
+  .Header .HamburgerOpen {
+    position: relative;
+    z-index: 999999;
+    margin-right: 32px;
+  }
+  .Header .HamburgerOpen .Hamburger .HamburgerInner {
+    background: none;
+  }
+  .Header .Menu {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 !important;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .Header .Menu ul {
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+  }
+  .Header .Menu ul .Submenu ul {
+    margin-top: 0px !important;
+  }
+  .Header .Menu .SubMenu {
+    display: none;
+    opacity: 1 !important;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    position: relative !important;
+    top: 0 !important;
+    z-index: 9999  !important;
+    background: #FFFFFF !important;
+  }
+  .Header .Menu .SubMenuOpen {
+    display: block !important;
+  }
+  .Header .MenuOpen {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .Header .MenuOverlay {
+    display: none;
+  }
+  .Banner .BannerText {
+    width: 90%;
+    padding-left: 5%;
+    bottom: calc(5% + 40px);
+  }
+  .Banner .BannerText h1 {
+    font-size: 42px;
+    line-height: 42px;
+  }
+  .Banner .BannerText p {
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: 20px;
+  }
+  .Banner .BannerText .ButtonFlex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .Banner .BannerText .ButtonFlex .BannerButton {
+    margin-bottom: 20px;
+  }
+  .Banner .BannerText .ButtonFlex .BannerButton .ButtonText {
+    color: #FFFFFF;
+    font-size: 16px;
+  }
+  .Banner .BannerText .ButtonFlex .ContactButton {
+    padding: 6px;
+    background: #DFB554;
+    min-width: none;
+    width: auto;
+    display: none;
+  }
+  .Banner .BannerText .ButtonFlex .ContactButton i {
+    text-align: center;
+  }
+  .Banner .BannerText .ButtonFlex .ContactButton .ButtonText {
+    color: #404040;
+    font-size: 16px;
+    padding-left: 15px;
+  }
+  .Banner .Social, .Banner .LeftDirection {
+    display: none;
+  }
+  .Banner .BannerImage {
+    width: 100%;
+    right: 0;
+    top: 70px;
+    height: 60%;
+  }
+  .Banner:after, .Banner:before {
+    display: none;
+  }
+  .AboutSection {
+    margin-bottom: 120px;
+  }
+  .AboutSection .CaptionLeft {
+    padding: 15% 5%;
+    margin-left: 0;
+    width: 100%;
+  }
+  .AboutSection .CaptionLeft h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .AboutSection .ImageRight {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+  .AtZen .Image {
+    width: 90%;
+    left: 5%;
+  }
+  .AtZen .Content {
+    width: 100%;
+    padding-left: 0;
+    padding: 8% 5%;
+  }
+  .AtZen .Content h2 {
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    width: 100%;
+  }
+  .AtZen .Content p {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    width: 100%;
+  }
+  .AtZen .Content .Button {
+    max-width: 125px;
+    margin: 20px auto;
+  }
+  .OurValues {
+    padding-top: 4%;
+  }
+  .OurValues:after {
+    left: 0;
+  }
+  .OurValues .Image {
+    width: 100%;
+    height: 300px;
+  }
+  .OurValues .Content {
+    width: 100%;
+    padding-left: 0;
+    padding: 8% 5%;
+  }
+  .OurValues .Content h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .OurValues .Content p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .ServicesAndPatients {
+    width: 100%;
+    padding: 5%;
+    padding-top: 100px;
+  }
+  .ServicesAndPatients:before {
+    height: 100px;
+    width: 100px;
+    right: 0;
+    left: auto;
+  }
+  .ServicesAndPatients .Content {
+    width: 100%;
+  }
+  .ServicesAndPatients .Content h2 {
+    font-size: 28px;
+    line-height: 34px;
+    width: 100%;
+    text-align: center;
+  }
+  .ServicesAndPatients .Content p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+    text-align: center;
+  }
+  .ServicesAndPatients .Services {
+    width: 100%;
+    padding: 5% 0;
+  }
+  .ServicesAndPatients .Services h3 {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+  .ServicesAndPatients .Services .Listing {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  .ServicesAndPatients .Services .Listing ul li {
+    width: 100%;
+  }
+  .ServicesAndPatients .Services .Listing ul li p {
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .ServicesAndPatients .Services .Listing ul li .Icon {
+    margin: 0 auto;
+  }
+  .ServicesAndPatients .Patients {
+    width: 100%;
+    padding: 5% 0;
+  }
+  .ServicesAndPatients .Patients .SquareButton {
+    display: block;
+    margin: 20px auto;
+    max-width: 350px !important;
+    line-height: 18px;
+  }
+  .ClientsQuotes {
+    overflow: hidden;
+    width: 100%;
+  }
+  .ClientsQuotes:before, .ClientsQuotes:after {
+    width: 100%;
+  }
+  .ClientsQuotes .ClientsCarouselMain {
+    width: 100%;
+    margin-top: 10%;
+  }
+  .ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar {
+    width: 100%;
+    padding-top: 60px;
+  }
+  .ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quotes {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .Quotes p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav .owl-prev {
+    left: 10px !important;
+    background: #FFFFFF;
+    padding: 5px !important;
+  }
+  .ClientsQuotes .ClientsCarouselMain .ClientsQuotesCar .owl-nav .owl-next {
+    background: #FFFFFF;
+    right: 10px !important;
+    padding: 5px !important;
+  }
+  .ClientsQuotes h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .ClientsQuotes h3 {
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 0;
+  }
+  .ContactUsSection:before, .ContactUsSection:after {
+    display: none;
+  }
+  .ContactUsSection .Map {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+  }
+  .ContactUsSection .Contact {
+    width: 100%;
+    padding: 5% 5%;
+    position: relative;
+    -webkit-transform: none;
+            transform: none;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+  .ContactUsSection .Contact h2 {
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+  }
+  .ContactUsSection .Contact h3 {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .ContactUsSection .Contact .SquareButton {
+    margin: 50px auto 20px;
+    display: block;
+    max-width: 180px;
+  }
   .Footer {
     width: 100%;
     padding: 50px 20px;
@@ -2303,6 +2773,19 @@ body {
     width: 200px;
     margin: 0 auto;
   }
+  .Footer .FooterInner .LogoAndAddress img {
+    margin: 0 auto;
+  }
+  .Footer .FooterInner .LogoAndAddress p {
+    text-align: center;
+  }
+  .Footer .FooterInner .LogoAndAddress .Button {
+    margin: 50px auto 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 165px;
+  }
   .Footer .FooterInner .LinksWrap {
     width: 100%;
   }
@@ -2313,6 +2796,41 @@ body {
   }
   .Footer .FooterInner .LinksWrap .Links ul li {
     margin-bottom: 7px;
+  }
+}
+
+@media screen and (min-height: 1300px) {
+  .Banner .Social {
+    top: 100px;
+  }
+  .Banner .BannerImage {
+    width: 100%;
+    right: 0;
+    top: 100px;
+    height: 50%;
+  }
+  .Banner:after, .Banner:before {
+    display: block;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 900px) {
+  .Banner .BannerImage {
+    width: 50%;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+  .Banner .BannerText {
+    width: 90%;
+    padding-left: 5%;
+    bottom: 5%;
+  }
+  .Banner .BannerText h1 {
+    padding-bottom: 10px;
+  }
+  .Banner .BannerText p {
+    margin-top: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
