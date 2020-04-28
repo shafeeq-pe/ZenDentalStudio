@@ -2833,4 +2833,10 @@ body {
     margin-top: 0;
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor-inner {
+    display: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */

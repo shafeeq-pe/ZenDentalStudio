@@ -2502,3 +2502,11 @@ h3{
 }
 
 
+
+@media (hover: none) and (pointer: coarse) {
+  .cursor-inner {
+    display: none
+  }
+ 
+}
+
